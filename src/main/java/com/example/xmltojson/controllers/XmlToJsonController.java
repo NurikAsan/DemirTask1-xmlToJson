@@ -1,7 +1,7 @@
 package com.example.xmltojson.controllers;
 
 import com.example.xmltojson.services.XmlService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,13 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequiredArgsConstructor
 public class XmlToJsonController {
     private final XmlService xmlService;
-
-    @Autowired
-    public XmlToJsonController(XmlService xmlService) {
-        this.xmlService = xmlService;
-    }
 
     @PostMapping("/process")
     public ResponseEntity<Map<String, Object>> processXml(@RequestBody String xmlData) {

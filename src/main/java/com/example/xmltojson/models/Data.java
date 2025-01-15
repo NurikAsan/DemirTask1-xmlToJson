@@ -3,7 +3,11 @@ package com.example.xmltojson.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @JacksonXmlRootElement(localName = "Data")
 public class Data {
     @JacksonXmlProperty(localName = "Method")
@@ -23,46 +27,8 @@ public class Data {
     @JsonProperty("Type")
     private String type;
 
-    public Method getMethod() {
-        return method;
-    }
-
-    public void setMethod(Method method) {
-        this.method = method;
-    }
-
-    public Process getProcess() {
-        return process;
-    }
-
-    public void setProcess(Process process) {
-        this.process = process;
-    }
-
-    public String getLayer() {
-        return layer;
-    }
-
-    public void setLayer(String layer) {
-        this.layer = layer;
-    }
-
-    public Creation getCreation() {
-        return creation;
-    }
-
-    public void setCreation(Creation creation) {
-        this.creation = creation;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    @Getter
+    @Setter
     public static class Method {
 
         @JacksonXmlProperty(localName = "Name")
@@ -76,32 +42,10 @@ public class Data {
         @JacksonXmlProperty(localName = "Assembly")
         @JsonProperty("Assembly")
         private String assembly;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getAssembly() {
-            return assembly;
-        }
-
-        public void setAssembly(String assembly) {
-            this.assembly = assembly;
-        }
     }
 
+    @Getter
+    @Setter
     public static class Process {
 
         @JacksonXmlProperty(localName = "Name")
@@ -116,30 +60,8 @@ public class Data {
         @JsonProperty("Start")
         private Start start;
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public Start getStart() {
-            return start;
-        }
-
-        public void setStart(Start start) {
-            this.start = start;
-        }
-
+        @Getter
+        @Setter
         public static class Start {
 
             @JacksonXmlProperty(localName = "Epoch")
@@ -149,25 +71,11 @@ public class Data {
             @JacksonXmlProperty(localName = "Date")
             @JsonProperty("Date")
             private String date;
-
-            public String getEpoch() {
-                return epoch;
-            }
-
-            public void setEpoch(String epoch) {
-                this.epoch = epoch;
-            }
-
-            public String getDate() {
-                return date;
-            }
-
-            public void setDate(String date) {
-                this.date = date;
-            }
         }
     }
 
+    @Getter
+    @Setter
     public static class Creation {
 
         @JacksonXmlProperty(localName = "Epoch")
@@ -177,21 +85,5 @@ public class Data {
         @JacksonXmlProperty(localName = "Date")
         @JsonProperty("Date")
         private String date;
-
-        public String getEpoch() {
-            return epoch;
-        }
-
-        public void setEpoch(String epoch) {
-            this.epoch = epoch;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
-        }
     }
 }
